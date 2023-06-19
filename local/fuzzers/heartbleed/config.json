@@ -1,0 +1,11 @@
+{
+    "target": {
+        "path": "openssl-1.0.1f-fsanitize_fuzzer",
+        "args": []
+    },
+    "options": {
+        "libfuzzer": {
+            "max_len": "512"
+        }
+    }
+}

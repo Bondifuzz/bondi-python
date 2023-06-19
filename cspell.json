@@ -1,0 +1,78 @@
+// cSpell Settings
+{
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+
+  // language - current active spelling language
+  "language": "en,ru",
+
+  // words - list of words to be always considered correct
+  "words": [
+    // En
+    "pavel",
+    "knyazev",
+    "pydantic",
+    "mqtransport",
+    "boto",
+    "botocore",
+    "dotenv",
+    "aiohttp",
+    "aioboto",
+    "aiobotocore",
+    "uvloop",
+    "httptools",
+    "cffi",
+    "aiofiles",
+    "coloredlogs",
+    "fastapi",
+    "starlette",
+    "uvicorn",
+    "arango",
+    "arangodb",
+    "aioarangodb",
+    "orjson",
+    "skipif",
+    "coro",
+    "coros",
+    "aclose",
+    "catched",
+    "pytest",
+    "asyncio",
+    "pylint",
+    "pdoc",
+    "bondi",
+    "bondifuzz",
+    "fuzzer",
+    "fuzzers",
+    "libfuzzer",
+    "afl",
+    "elasticmq",
+    "softwaremill",
+    "classpath",
+    "randint",
+    "rfail",
+    "fconfs",
+    "dbkey",
+    "myproj",
+    "myimg",
+    "mykey",
+    "toolz",
+    "execve",
+    "pylance",
+    "httpx",
+    "creds",
+    "typer",
+    "astimezone",
+    "tablefmt",
+    "optify",
+    "psql",
+    "youtrack",
+    "autologin",
+    // Ru
+    "валидируется"
+  ],
+  // flagWords - list of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  // For example "hte" should be "the"
+  "flagWords": []
+}
