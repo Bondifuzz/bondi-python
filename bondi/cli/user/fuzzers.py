@@ -71,15 +71,13 @@ class GetFuzzerResponseModel(BaseModel):
     id: str
     name: str
     description: str
-    engine: FuzzingEngine
-    lang: FuzzerLang
+    engine: str
+    lang: str
     ci_integration: bool
 
     def display_dict(self):
         data = self.dict()
         data["description"] = shorten(self.description)
-        data["engine"] = self.engine.value
-        data["lang"] = self.lang.value
         return data
 
 
@@ -281,8 +279,8 @@ def create_fuzzer(
         "name": name,
         "description": description or "No description",
         "ci_integration": ci_integration,
-        "engine": engine,
-        "lang": lang,
+        "engine": engine.value.lower(),
+        "lang": lang.value.lower(),
     }
 
     with AutologinClient() as client:
