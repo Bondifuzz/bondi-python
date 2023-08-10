@@ -14,6 +14,7 @@ from bondi.cli.user import (
     projects,
     revisions,
     statistics,
+    pools,
 )
 from bondi.defaults import DEFAULTS_DIR
 from bondi.errors import BadParameterError, BondiError, BondiValidationError
@@ -45,6 +46,7 @@ app = typer.Typer(
 app.add_typer(app_admin)
 app.add_typer(images.app)
 app.add_typer(projects.app)
+app.add_typer(pools.app)
 app.add_typer(integrations.app)
 app.add_typer(fuzzers.app)
 app.add_typer(statistics.app)

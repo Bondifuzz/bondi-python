@@ -46,9 +46,8 @@ def parse_validation_error_and_raise(json_data: dict):
 def parse_error_and_raise(json_data: dict):
 
     try:
-        error = ErrorModel.parse_obj(json_data["error"])
-
-    except (KeyError, ValidationError):
+        error = ErrorModel.parse_obj(json_data)
+    except (ValidationError):
         parse_validation_error_and_raise(json_data)
 
     raise APIError(error.code, error.message)
@@ -83,10 +82,11 @@ def parse_response(
         if response.status_code not in _STATUS_CODES:
             parse_error_and_raise(json_data)
 
-        if grab_result:
-            data = model.parse_obj(json_data["result"])
-        else:
-            data = model.parse_obj(json_data)
+        # if grab_result:
+        #     data = model.parse_obj(json_data["result"])
+        # else:
+        #     data = model.parse_obj(json_data)
+        data = model.parse_obj(json_data)
 
     except ValidationError as e:
         raise InternalError() from e  # TODO: logger.debug
@@ -119,8 +119,8 @@ def paginate(client: AutologinClient, url: str, model: Type[BaseModel]):
                 parse_error_and_raise(json_data)
 
             # Get page items
-            items = json_data["result"]["items"]
-            pg_size = int(json_data["result"]["pg_size"])
+            items = json_data["items"]
+            pg_size = int(json_data["pg_size"])
 
             # Items must be a list
             if not isinstance(items, list):
